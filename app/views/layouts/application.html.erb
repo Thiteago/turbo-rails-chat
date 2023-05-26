@@ -10,11 +10,20 @@
     <%= javascript_importmap_tags %>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.6/dist/full.css" rel="stylesheet" type="text/css" />
+    <style>
+      <%= ".msg-#{current_user&.id}" %> {
+        background-color: #007bff !important;
+        padding: 10px;
+      }
 
+      <%= ".cont-#{current_user&.id}" %> {
+        display: flex;
+        justify-content: flex-end
+      }
+    </style>
   </head>
 
-  <body class="flex justify-center flex-col max-w-7xl m-auto items-center">
-    <%= render "layouts/navbar" %>
+  <body class="flex mt-6 justify-center flex-col max-w-7xl m-auto items-center">
     <%= yield %>
   </body>
 </html>
