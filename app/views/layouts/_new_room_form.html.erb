@@ -1,0 +1,10 @@
+<%= form_with(model: @room, remote: true, class:'flex sticky top-0 bg-stone-800') do |f| %>
+  <%= f.text_field :name, class: 'form-control w-full pl-2', autocomplete: 'off', id: 'input-name-room', placeholder: 'Nome da sala'%>
+  <%= f.submit "Criar",data: {disable_with: false}, class: 'btn bg-stone-800 hover:bg-stone-600 rounded-none', id: 'create-room' %>
+<% end %>
+
+<script>
+  document.getElementById('create-room').addEventListener('click', function(){
+    document.getElementById('input-name-room').value = ''
+  })
+</script>
