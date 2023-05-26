@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="dracula">
   <head>
     <title>Turbochat</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -8,9 +8,13 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.6/dist/full.css" rel="stylesheet" type="text/css" />
+
   </head>
 
   <body>
+    <%= render "layouts/navbar" %>
     <%= yield %>
   </body>
 </html>
